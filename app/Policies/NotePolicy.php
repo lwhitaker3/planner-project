@@ -20,6 +20,6 @@ class NotePolicy
 
    public function destroy(User $user, Note $note)
    {
-       return $user->id === $note->user_id;
+       return $user->id == $note->user_id;
    }
 }

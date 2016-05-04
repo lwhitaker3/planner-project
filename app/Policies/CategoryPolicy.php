@@ -20,6 +20,6 @@ class CategoryPolicy
 
  public function destroy(User $user, Category $category)
  {
-     return $user->id === $category->user_id;
+     return $user->id == $category->user_id;
  }
 }

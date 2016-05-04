@@ -20,10 +20,10 @@ class TaskPolicy
 
    public function destroy(User $user, Task $task)
    {
-       return $user->id === $task->user_id;
+       return $user->id == $task->user_id;
    }
    public function destroy2(User $user, Task $task)
    {
-       return $user->id === $task->user_id;
+       return $user->id == $task->user_id;
    }
 }

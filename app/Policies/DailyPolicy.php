@@ -23,6 +23,6 @@ class DailyPolicy
       */
      public function destroy(User $user, Daily_Note $daily_note)
      {
-         return $user->id === $daily_note->user_id;
+         return $user->id == $daily_note->user_id;
      }
 }

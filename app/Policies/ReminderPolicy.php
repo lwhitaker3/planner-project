@@ -20,6 +20,6 @@ class ReminderPolicy
 
      public function destroy(User $user, Reminder $reminder)
      {
-         return $user->id === $reminder->user_id;
+         return $user->id == $reminder->user_id;
      }
 }
