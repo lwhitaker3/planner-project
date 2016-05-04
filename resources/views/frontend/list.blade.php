@@ -4,7 +4,7 @@
 
 <script type="text/javascript" src="{{ url('/js/task_item.js') }}"></script>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
 
@@ -73,11 +73,9 @@
 
           <script type="text/javascript" src="{{ url('/js/reminder.js') }}"></script>
           <div class="col-sm-6" id="edit-section">
-            <div class="col-sm-3 fixed">
               @foreach ($tasks as $task)
                 @include('frontend.task_item_edit')
               @endforeach
-            </div>
           </div>
         </div>
       </div>

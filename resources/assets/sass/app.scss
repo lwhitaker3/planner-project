@@ -15,6 +15,7 @@ h4{
   font-weight: 700;
   color: $main_color;
   font-size: 20px;
+  clear: both;
 }
 
 .daily{
@@ -70,10 +71,10 @@ label{
 
 // MENU
 .menu_icons{
-  width: 40px;
+  width: 35px;
 }
 .add_icons{
-  width: 30px;
+  width: 20px;
 }
 .navbar-nav>li>a {
   padding: 5px 15px;
@@ -97,30 +98,43 @@ label{
 /* Sortable items */
 
 .sortable-list {
-list-style: none;
-margin: 0;
-min-height: 30%;
-padding: 5px;
+  list-style: none;
+  margin: 0;
+  min-height: 30%;
+  padding: 5px;
+  min-height: 30px;
+}
+.inner_wrapper{
+  padding: 15px;
 }
 .sortable-item {
-cursor: move;
-display: block;
-margin-bottom: 5px;
+  cursor: move;
+  display: block;
+  margin-bottom: 5px;
 }
-
-.planner-list{
-height: 100%;
-background-color: #ddd;
+#task-title{
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 6px;
+}
+.button_group_custom{
+  border: none;
+  border-radius: 0;
+  padding: 5px;
 }
 .title{
-border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .planner-list .sortable-list{
-height: 100%;
+  height: 100%;
 }
-
-
+#completed_list{
+  list-style: none;
+}
 
 /* Item placeholder (visual helper) */
 
@@ -136,9 +150,48 @@ padding: 0px;
 margin: 0 0 20px;
 }
 .day-container{
-border: 1px solid black;
+border: 1px solid $lightgrey;
 margin: 0;
 }
+.daily_note_text{
+  resize: vertical;
+  border-color: transparent;
+  box-shadow: none;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  font-size: 16px;
+  border-bottom: 2px solid transparent;
+  padding: 0 0 15px 0;
+  &:focus{
+    border-bottom: 1px solid $lightgrey;
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+  }
+}
+
+.todo_item{
+// width:500px;
+// margin:0 auto 50px auto;
+// padding:50px;
+// border: 2px solid gray;
+  input[type="checkbox"]{
+    position:absolute;
+    height:0;
+    width:0;
+    opacity:0;
+    top:-600px;
+  }
+}
+.planner_todo_item{
+  padding: 0 0 0 15px;
+}
+
 .row.day-container h4{
 padding: 5px;
 margin: 0;
@@ -148,6 +201,22 @@ height: 100%;
 background-color: #eee;
 }
 
+// PLANNER
+.arrow_buttons{
+  display: inline-block;
+  button{
+    font-size: 30px;
+    color: $main_color;
+    border: 0px;
+    background-color: transparent;
+    &:hover{
+      color: $lighter_color;
+    }
+  }
+}
+#right_button{
+  float: right;
+}
 
 // NOTES
 
@@ -190,7 +259,7 @@ background-color: #eee;
 
     border-bottom: 2px solid transparent;
     &:focus{
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid $darkgrey;
       outline: none;
       box-shadow: none;
       -webkit-box-shadow: none;
@@ -223,7 +292,8 @@ background-color: #eee;
   font-size: 12px;
 }
 .bulletColor{
-  padding: 2px 0 2px 12px;
+  padding: 0 0 0 12px;
+  font-size: 20px;
 }
 // END OF NOTES
 
@@ -304,24 +374,54 @@ background-color: #eee;
 // END OF CATEGORIES
 
 // TO DO LIST CSS PASTED
-#todo-list{
-// width:500px;
-// margin:0 auto 50px auto;
-// padding:50px;
-// border: 2px solid gray;
-  input[type="checkbox"]{
-    position:absolute;
-    height:0;
-    width:0;
-    opacity:0;
-    top:-600px;
+.form-control{
+  margin-bottom: 15px;
+}
+.btn-default {
+    margin-bottom: 15px;
+}
+textarea{
+  resize: none;
+}
+.task_category_select{
+  width: 80%;
+  display: inline-block;
+}
+
+.todo_tasks{
+  ul{
+    padding: 0;
+    .todo-wrap{
+      display:block;
+      position:relative;
+      clear: both;
+      padding: 0 40px;
+      margin-bottom: 5px;
+      border-right: 1px solid transparent;
+      &:hover{
+        background-color: lighten($lightgrey,15);
+      }
+    }
+  }
+}
+.completed_tasks{
+  ul{
+    padding: 0;
+    .todo-wrap{
+      display:block;
+      position:relative;
+      clear: both;
+      padding: 0 40px;
+      margin-bottom: 5px;
+      border-right: 1px solid transparent;
+      &:hover{
+        background-color: lighten($lightgrey,15);
+      }
+    }
   }
 }
 
-.todo-wrap{
-  display:block;
-  position:relative;
-}
+
 
 .todo{
   display:inline-block;
@@ -395,18 +495,19 @@ width: calc(100% - 5px);
 }
 :checked + .todo:after{
 /*box-shadow*/
--webkit-box-shadow:inset 0 0 0 2px #0eb0b7;
-   -moz-box-shadow:inset 0 0 0 2px #0eb0b7;
-        box-shadow:inset 0 0 0 2px #0eb0b7;
+-webkit-box-shadow:inset 0 0 0 2px $main_color;
+   -moz-box-shadow:inset 0 0 0 2px $main_color;
+        box-shadow:inset 0 0 0 2px $main_color;
 }
 :checked + .todo .fa-check{
 font-size:20px;
 line-height:35px;
-color:#0eb0b7;
+color:$lighter_color;
 }
 /* Delete Items */
 
 .delete-item{
+padding-right: 5px;
 display:block;
 position:absolute;
 height:36px;
@@ -467,10 +568,16 @@ width:100%;
 
 .todo_edit_wrap{
   display: none;
+  clear: both;
+}
+.todo_due{
+  float: right;
+  line-height: 35px;
 }
 
 .reminder_list{
   list-style: none;
+  padding: 0;
 }
 
 #sortable{

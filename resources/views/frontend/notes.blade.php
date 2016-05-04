@@ -4,7 +4,7 @@
 <script type="text/javascript" src="{{ url('/js/note_item.js') }}"></script>
 
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
 

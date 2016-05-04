@@ -14,15 +14,17 @@
     <textarea id="title{{ $note->id }}" rows="1" type="text" maxlength="255" name="title" class="note_title form-control" placeholder="Add Title...">{{ $note->title }}</textarea>
     <textarea id="textarea{{ $note->id }}" maxlength="255" name="text" class="form-control note_text_area" placeholder="Type New Note...">{{ $note->text }}</textarea>
 
-    <span id="bulletColor{{ $note->id }}" class="bulletColor">&#8226;</span>
-    <!-- {{ $note->category['color'] }} -->
+    <div class="category_select_wrapper">
+      <span id="bulletColor{{ $note->id }}" class="bulletColor">&#8226;</span>
+      <!-- {{ $note->category['color'] }} -->
 
-    <select id="category_select{{ $note->id }}" class="category_select" name="category_id">
-      <option data-category-color="gray" value="">None</option>
-      @foreach ($categories as $category)
-      <option data-category-color="{{ $category->color }}" value="{{ $category->id }}" @if ($note->category_id == $category->id) selected @endif>{{ $category->name }}</option>
-      @endforeach
-    </select>
+      <select id="category_select{{ $note->id }}" class="category_select" name="category_id">
+        <option data-category-color="gray" value="">None</option>
+        @foreach ($categories as $category)
+        <option data-category-color="{{ $category->color }}" value="{{ $category->id }}" @if ($note->category_id == $category->id) selected @endif>{{ $category->name }}</option>
+        @endforeach
+      </select>
+    </div>
   </form>
   <p>
     @if ($note->created_at)

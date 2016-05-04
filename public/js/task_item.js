@@ -65,7 +65,7 @@ function reminderSaveListener(e){
 };
 
 function editTodo(){
-  $(this).find('.bulletColor').css('color', $(this).find(".category_select option:selected").data('categoryColor'));
+  $(this).find('.bulletColor').css('color', $(this).find(".task_category_select option:selected").data('categoryColor'));
   saveTask($(this));
 };
 

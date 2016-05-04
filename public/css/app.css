@@ -8,7 +8,8 @@ h3 {
 h4 {
   font-weight: 700;
   color: #f15a4b;
-  font-size: 20px; }
+  font-size: 20px;
+  clear: both; }
 
 .daily {
   color: #f15a4b; }
@@ -60,10 +61,10 @@ label {
   background-color: transparent; }
 
 .menu_icons {
-  width: 40px; }
+  width: 35px; }
 
 .add_icons {
-  width: 30px; }
+  width: 20px; }
 
 .navbar-nav > li > a {
   padding: 5px 15px; }
@@ -89,22 +90,38 @@ label {
   list-style: none;
   margin: 0;
   min-height: 30%;
-  padding: 5px; }
+  padding: 5px;
+  min-height: 30px; }
+
+.inner_wrapper {
+  padding: 15px; }
 
 .sortable-item {
   cursor: move;
   display: block;
   margin-bottom: 5px; }
 
-.planner-list {
-  height: 100%;
-  background-color: #ddd; }
+#task-title {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 6px; }
+
+.button_group_custom {
+  border: none;
+  border-radius: 0;
+  padding: 5px; }
 
 .title {
   border-bottom: 1px solid black; }
 
 .planner-list .sortable-list {
   height: 100%; }
+
+#completed_list {
+  list-style: none; }
 
 /* Item placeholder (visual helper) */
 .placeholder {
@@ -119,8 +136,37 @@ label {
   margin: 0 0 20px; }
 
 .day-container {
-  border: 1px solid black;
+  border: 1px solid #d4d4d4;
   margin: 0; }
+
+.daily_note_text {
+  resize: vertical;
+  border-color: transparent;
+  box-shadow: none;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  font-size: 16px;
+  border-bottom: 2px solid transparent;
+  padding: 0 0 15px 0; }
+  .daily_note_text:focus {
+    border-bottom: 1px solid #d4d4d4;
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none; }
+
+.todo_item input[type="checkbox"] {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  top: -600px; }
+
+.planner_todo_item {
+  padding: 0 0 0 15px; }
 
 .row.day-container h4 {
   padding: 5px;
@@ -129,6 +175,19 @@ label {
 .category-list {
   height: 100%;
   background-color: #eee; }
+
+.arrow_buttons {
+  display: inline-block; }
+  .arrow_buttons button {
+    font-size: 30px;
+    color: #f15a4b;
+    border: 0px;
+    background-color: transparent; }
+    .arrow_buttons button:hover {
+      color: #ef7670; }
+
+#right_button {
+  float: right; }
 
 .sticky-note {
   margin: 5px 0;
@@ -161,7 +220,7 @@ label {
     font-size: 16px;
     border-bottom: 2px solid transparent; }
     .sticky-note textarea:focus {
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid #4d4d4d;
       outline: none;
       box-shadow: none;
       -webkit-box-shadow: none; }
@@ -191,7 +250,8 @@ label {
   font-size: 12px; }
 
 .bulletColor {
-  padding: 2px 0 2px 12px; }
+  padding: 0 0 0 12px;
+  font-size: 20px; }
 
 .category_list {
   list-style: none;
@@ -255,16 +315,42 @@ label {
   border-radius: 50%;
   vertical-align: middle; }
 
-#todo-list input[type="checkbox"] {
-  position: absolute;
-  height: 0;
-  width: 0;
-  opacity: 0;
-  top: -600px; }
+.form-control {
+  margin-bottom: 15px; }
 
-.todo-wrap {
-  display: block;
-  position: relative; }
+.btn-default {
+  margin-bottom: 15px; }
+
+textarea {
+  resize: none; }
+
+.task_category_select {
+  width: 80%;
+  display: inline-block; }
+
+.todo_tasks ul {
+  padding: 0; }
+  .todo_tasks ul .todo-wrap {
+    display: block;
+    position: relative;
+    clear: both;
+    padding: 0 40px;
+    margin-bottom: 5px;
+    border-right: 1px solid transparent; }
+    .todo_tasks ul .todo-wrap:hover {
+      background-color: #fafafa; }
+
+.completed_tasks ul {
+  padding: 0; }
+  .completed_tasks ul .todo-wrap {
+    display: block;
+    position: relative;
+    clear: both;
+    padding: 0 40px;
+    margin-bottom: 5px;
+    border-right: 1px solid transparent; }
+    .completed_tasks ul .todo-wrap:hover {
+      background-color: #fafafa; }
 
 .todo {
   display: inline-block;
@@ -325,15 +411,16 @@ label {
 
 :checked + .todo:after {
   /*box-shadow*/
-  box-shadow: inset 0 0 0 2px #0eb0b7; }
+  box-shadow: inset 0 0 0 2px #f15a4b; }
 
 :checked + .todo .fa-check {
   font-size: 20px;
   line-height: 35px;
-  color: #0eb0b7; }
+  color: #ef7670; }
 
 /* Delete Items */
 .delete-item {
+  padding-right: 5px;
   display: block;
   position: absolute;
   height: 36px;
@@ -383,10 +470,16 @@ label {
       width: 100%; }
 
 .todo_edit_wrap {
-  display: none; }
+  display: none;
+  clear: both; }
+
+.todo_due {
+  float: right;
+  line-height: 35px; }
 
 .reminder_list {
-  list-style: none; }
+  list-style: none;
+  padding: 0; }
 
 #sortable {
   list-style: none; }

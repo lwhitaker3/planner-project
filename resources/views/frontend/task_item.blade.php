@@ -11,7 +11,7 @@
 
       <input type="hidden" name="order" value="{{$task->order}}">
 
-      <span id="todo_due{{ $task->id }}">
+      <span class="todo_due" id="todo_due{{ $task->id }}">
         @if ($task->due_date)
         {{ $task->due_date->format('m.d.Y')}}
         @endif

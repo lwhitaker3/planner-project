@@ -7,7 +7,7 @@ function saveTask(form){
 
 
 
-
+autosize($('.task_info'));
 
 
 // $('.todo').click(function(e) {
@@ -17,24 +17,24 @@ function saveTask(form){
 
 $(".category_list").on("categoryEdit", function(e, id, name, color){
 
-  $('.todo_edit .category_select option[value='+id+']').each(function(i,item){
+  $('.todo_edit .task_category_select option[value='+id+']').each(function(i,item){
     $(item).text(name);
     $(item).data('categoryColor', color);
   });
   $('.todo_edit').each(function(i,form){
-    $(form).find('.bulletColor').css('color', $(form).find(".category_select option:selected").data('categoryColor'));
+    $(form).find('.bulletColor').css('color', $(form).find(".task_category_select option:selected").data('categoryColor'));
   });
 });
 
 $(".category_list").on("categoryDelete", function(e, id){
-  $('.todo_edit .category_select option[value='+id+']').each(function(i,item){
+  $('.todo_edit .task_category_select option[value='+id+']').each(function(i,item){
     $(item).remove();
   });
 });
 
 $(".create_category").on("categoryCreate", function(e, id, name, color){
   // console.log(id,name);
-  $('.category_select').append($('<option>', {
+  $('.task_category_select').append($('<option>', {
     'data-category-color': color,
     value: id,
     text: name

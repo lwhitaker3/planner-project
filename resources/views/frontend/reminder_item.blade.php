@@ -20,7 +20,7 @@
           <div class='input-group date daypicker_reminder' id="daypicker_reminder{{ $reminder->id }}">
               <input name="reminder_time" type='text' class="form-control" value= '{{ $reminder->reminder_time->format("m-d-Y")}}'/>
               <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
+                <img class="add_icons" src="{{ url('/images/icon-09.png') }}">
               </span>
           </div>
       </div>
