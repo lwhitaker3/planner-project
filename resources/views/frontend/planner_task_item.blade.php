@@ -1,4 +1,4 @@
-<li class="task_list_item">
+<li class="task_list_item sortable">
   <span class="todo-wrap" id="planner_todo-wrap{{ $task->id }}" data-task-id="{{ $task->id }}">
 
     <form class="todo_item" id="planner_todo_item{{ $task->id }}" action="/planner/task/{{ $task->id }}" method="POST">

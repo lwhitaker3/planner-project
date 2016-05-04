@@ -27,18 +27,12 @@
         </button>
       </form>
 
-			<ul class="sortable-list" data-date="null">
+			<ul id="initial_list" class="sortable-list" data-date="null">
         @foreach ($tasks as $task)
           @if (!$task->completed)
             @if (!$task->do_date)
-              <li class="sortable-item" id="initial_list">
                 @include('frontend/planner_task_item')
-                <!-- <form action = "/planner/task/{{$task->id}}" method="POST">
-                  {{ csrf_field() }}
-                  &#9679; {{ $task->title }}
-                  <input type="hidden" class="do_date" id="do_date{{ $task->id }}" name="do_date" value="{{$task->do_date}}">
-                </form> -->
-              </li>
+
             @endif
           @endif
         @endforeach
