@@ -24,7 +24,8 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web'],
+              'prefix' => 'systematize'], function () {
 
   Route::get('/', function () {
     return view('welcome');
